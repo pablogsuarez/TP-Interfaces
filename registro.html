@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrate | Mi Argentina</title>
+  <meta name="description"
+    content="El perfil digital del ciudadano, todas las interacciones con el Estado en un solo lugar." />
+  <meta name="keywords"
+    content="mi argentina, tramites, servicios, seguimiento, notificaciones, alertas, Estado, perfil digital" />
+  <meta name="language" content="Spanish" />
+  <meta name="revisit" content="1 day" />
+  <meta name="distribution" content="Global" />
+  <meta name="robots" content="All" />
+  <meta name="author" content="Ministerio de Modernización. Presidencia de la Nación." />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <!-- Nav and address bar color -->
+  <meta name="theme-color" content="#0072b8">
+  <meta name="msapplication-navbutton-color" content="#0072b8">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
+  <link href="/static/css/bootstrap.css" rel="stylesheet">
+  <link href="/static/css/poncho.min.css" rel="stylesheet">
+  <link href="/static/css/roboto-fontface.css" rel="stylesheet">
+  <link href="/static/css/font-awesome.css" rel="stylesheet">
+
+  <link href="/static/css/icono-arg.css" rel="stylesheet">
+  <link href="/static/css/miargentina.css" rel="stylesheet">
+<!-- Favicon -->
+  <link rel="shortcut icon" href="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico" type="image/vnd.microsoft.icon">
+ 
+  <style>
+
+    .modal {
+      text-align: center;
+    }
+
+    .modal-dialog {
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .modal-content {
+      border: 0;
+      border-radius: 3px;
+    }
+
+    @media screen and (min-width:768px) {
+      .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+      }
+
+      .modal-sm {
+        width: 335px;
+      }
+    }
+  </style>
+
+
+
+<body>
+  <nav class="bg-blue" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><img src="./img/miargentina-logo.png"
+          alt="Mi Argentina Logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="link" href="index.html">Inicio</a></li>
+        <li><a class="link" href="inicioSesion.html">Inicia Sesión</a></li>
+        <li><a class="link active-page" href="registracion.html">Registrate</a></li>
+      </ul>
+
+     <ul id="nav-mobile" class="sidenav">
+        <li><a href="./inicioSesion.html">Inicio</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Información</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <!-- logo y boton mi cuenta -->
+  </header>
+
+  <!-- main -->
+  <main role="main" class="container-fluid">
+
+    <div class="container ">
+      <div class="row center">
+        <h5 class="header col s12 ">Registrate !
+        </h5>
+        <p>Ahora podes realizar el trámite de tu licencia de la forma más rápida y eficaz.</p>
+      </div>
+      <a  href="inicioSesion.html">
+        Si ya estás registrado, ingresá a tu cuenta.
+      </a>
+      </p>
+
+    <div class="formPrincipal">
+      <div class="container">
+        
+        <form method="post" >
+          <input type='hidden' name='csrfmiddlewaretoken'
+          value='r1VmIFixEqI06eeSIkBLhEmW0xdi4BhihLsOXmYjYJYfA5vxeypFm9hYqTnfLU3m' />
+          
+          
+          <input type="hidden" name="next"
+          value="/authorize/?client_id=613410&amp;response_type=code&amp;scope=openid+profile+email+optional&amp;redirect_uri=https://mi.argentina.gob.ar/_oauth/oidc&amp;state=eyJsb2dpblN0eWxlIjoic
+          mVkaXJlY3QiLCJjcmVkZW50aWFsVG9rZW4iOiJ6ZWl2alhKRVp0bkZFSFFpaiIsImlzQ29yZG92YSI6ZmFsc2UsInJlZGlyZWN0VXJsIjoiaHR0cHM6Ly9taS5hcmdlbnRpbmEuZ29iLmFyLyJ9">          
+          <div id="errores" rol='alert' aria-live='assertive' class="alert alert-danger sr-only">
+          </div>
+          <fieldset class="fieldset">
+            <label>
+              Identificación (CUIL o DNI)
+            </label>
+            <div class="rowForm">
+              
+              <!-- tipo -->
+              <div class="col-xs-4 col-sm-3">
+                <div class="form-group">
+                  <label for="id_type" class="sr-only">
+                    Tipo de documento
+                  </label>
+                  
+                  
+                  <select class="form-control" name="id_type" id="id_type" required>
+                    <option value="CUIL" elected>
+                      CUIL
+                    </option>
+                    <option value="PASS">
+                      DNI
+                    </option>
+                  </select>
+                  
+                </div>
+              </div>
+              <!-- / tipo -->
+              
+              <div class="col-xs-8 col-sm-9 item-form">
+                <div class="form-group">
+                  <label for="id_number" class="sr-only">
+                    Número de documento
+                  </label>
+                  <input id="id_number" class="form-control" type="text" name="id_number" maxlength="12" minlength="9"
+                style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"
+                value="">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-group item-form">
+          <label for="first_name">Nombre</label>
+          <input id="first_name" class="form-control" type="text" name="first_name" value="">
+        </div>
+        <div class="form-group item-form">
+          <label for="last_name">Apellido</label>
+          <input id="last_name" class="form-control" type="text" name="last_name" value="">
+        </div>
+        
+        <div class="form-group item-form">
+          <fieldset>
+            <legend>
+              <label id="gender" for="gender">
+                Sexo
+              </label>
+            </legend>
+            
+            
+            
+            <div class="btn-group btn-group-justified tipoSexo" data-toggle="buttons">
+              <p>
+                <label>
+                  <input class="with-gap" name="gender" type="radio" />
+                  <span>Femenino</span>
+                </label>
+              </p>
+              
+              <p>
+                <label>
+                  <input class="with-gap" name="gender" type="radio" />
+                  <span>Masculino</span>
+                </label>
+              </p>
+            </div>
+            
+          </fieldset>
+        </div>
+        <div class="form-group item-form">
+          <label for="birthdate">Fecha de Nacimiento</label>
+          <input id="birthdate" class="form-control" type="text" name="birthdate" value="" placeholder="dd/mm/aaaa"
+          data-mask="09/09/0000" autocomplete="off" maxlength="10">
+        </div>
+        
+        
+        <div class="form-group item-form">
+          <label for="email">Correo Electrónico</label>
+          <input autocomplete="off" id="email" class="form-control" type="email" name="email" value="">
+        </div>
+        <div class="form-group item-form">
+          <label for="email-confirmation">
+            Confirmar Correo Electrónico
+          </label>
+          
+          <input autocomplete="off" id="email-confirmation" class="form-control" type="email" name="email_confirmation"
+          value="">
+        </div>
+        <div class="form-group item-form">
+          <label for="password">
+            Creá una contraseña para Mi Argentina
+          </label>
+          <div class="help-block" id="help-password">
+            Usá al menos 8 caracteres
+          </div>
+          <input autocomplete="off" id="password" class="form-control" type="password" name="password"
+          style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABKRJREFUWAnNl0tsVGUUxzvTTlslZUaCloZHY6BRFkp9sDBuqgINpaBp02dIDImwKDG6ICQ8jBYlhg0rxUBYEALTpulMgBlqOqHRDSikJkZdGG0CRqAGUuwDovQ1/s7NPTffnTu3zMxGvuT2vP7n8Z3vu+dOi4r+5xUoJH8sFquamZmpTqfTVeIfCARGQ6HQH83NzaP5xsu5gL6+vuVzc3NdJN1Kkhd8Ev1MMYni4uJjra2tt3wwLvUjCxgYGFg8Pj7+MV5dPOUub3/hX0zHIpFId0NDw6Q/jO4tZOzv76+Znp6+AOb5TBw7/YduWC2Hr4J/IhOD/GswGHy7vb39tyw2S+VbAC1/ZXZ29hKoiOE8RrIvaPE5WvyjoS8CX8sRvYPufYpZYtjGS0pKNoD/wdA5bNYCCLaMYMMEWq5IEn8ZDof3P6ql9pF9jp8cma6bFLGeIv5ShdISZUzKzqPIVnISp3l20caTJsaPtwvc3dPTIx06ziZkkyvY0FnoW5l+ng7guAWnpAI5w4MkP6yy0GQy+dTU1JToGm19sqKi4kBjY+PftmwRYn1ErEOq4+i2tLW1DagsNGgKNv+p6tj595nJxUbyOIF38AwipoSfnJyMqZ9SfD8jxlWV5+fnu5VX6iqgt7d3NcFeUiN0n8FbLEOoGkwdgY90dnbu7OjoeE94jG9wd1aZePRp5AOqw+9VMM+qLNRVABXKkLEWzn8S/FtbdAhnuVQE7LdVafBPq04pMYawO0OJ+6XHZkFcBQA0J1xKgyhlB0EChEWGX8RulsgjvOjEBu+5V+icWOSoFawuVwEordluG28oSCmXSs55SGSCHiXhmDzC25ghMHGbdwhJr6sAdpnyQl0FYIyoEX5CeYOuNHg/NhvGiUUxVgfV2VUAxjtqgPecp9oKoE4sNnbX9HcVgMH8nD5nAoWnKM/5ZmKyySRdq3pCmDncR4DxOwVC64eHh0OGLOcur1Vey46xUZ3IcVl5oa4OlJaWXgQwJwZyhUdGRjqE14VtSnk/mokhxnawiwUvsZmsX5u+rgKamprGMDoA5sKhRCLxpDowSpsJ8vpCj2AUPzg4uIiNfKIyNMkH6Z4hF3k+RgTYz6vVAEiKq2bsniZIC0nTtvMVMwBzoBT9tKkTHp8Ak1V8dTrOE+NgJs7VATESTH5WnVAgfHUqlXK6oHpJEI1G9zEZH/Du16leqHyS0UXBNKmeOMf5NvyislJPB8RAFz4g8IuwofLy8k319fUP1EEouw7L7mC3kUTO1nn3sb02MTFxFpsz87FfJuaH4pu5fF+reDz+DEfxkI44Q0ScSbyOpDGe1RqMBN08o+ha0L0JdeKi/6msrGwj98uZMeon1AGaSj+elr9LwK9IkO33n8cN7Hl2vp1N3PcYbUXOBbDz9bwV1/wCmXoS3+B128OPD/l2LLg8l9APXVlZKZfzfDY7ehlQv0PPQDez6zW5JJdYOXdAwHK2dGIv7GH4YtHJIvEOvvunLCHPPzl3QOLKTkl0hPbKaDUvlTU988xtwfMqQBPQ3m/4mf0yBVlDCSr/CRW0CipAMnGzb9XU1NSRvIX7kSgo++Pg9B8wltxxbHKPZgAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"
+          value="">
+          <div class="checkbox">
+            <label for="opcion" id="mostrar">
+              <input id="opcion" name="mostrar" type="checkbox" value="">
+              Mostrar la contraseña
+            </label>
+          </div>
+        </div>
+        
+        <div class="rowForm">
+          <div class="col-md-12">
+            <div class="well">
+              <fieldset>
+                <legend>
+                  <h5>Términos y condiciones</h5>
+                </legend>
+                <p>
+                  Para crear tu cuenta es necesario que aceptes los
+                  <a href="https://www.argentina.gob.ar/mi/terminos-y-condiciones" target="_blank">
+                    Términos y condiciones
+                  </a> de Mi Argentina
+                </p>
+                <div class="form-group item-form m-t-2">
+                  <div class="checkbox">
+                    <label for="id_general" class="radio-inline">
+                      <input id="id_general" type="checkbox" name="general" required>
+                      <p>
+                        <label>
+                          <input class="with-gap" name="gender" type="radio" />
+                          <span>Acepto</span>
+                        </label>
+                      </p>
+                      Acepto los términos y condiciones de Mi Argentina
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div class="rowForm">
+          <div class="col-sm-6 col-xs-12">
+            <button type="submit" name="principal" class="btn btn-success btn-block crearCuenta">
+              Crear cuenta
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<!-- / main -->
+
+<!-- Footer -->
+
+<footer class="page-footer footer-color">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col l3 s12">
+          <h5 class="white-text">Información útil</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Seguridad</a></li>
+            <br>
+            <li><a class="white-text" href="#!">Preguntas Frecuentes </a></li>
+            <br>
+            <li><a class="white-text" href="#!">Terminos y Condiciones</a></li>
+          </ul>
+        </div>
+
+        <div class="col l3 m6 s12">
+          <h5 class="white-text">Aplicación</h5>
+          <div class="apps">
+            <img class="responsive-img" src="./img/apps.png" alt="">
+          </div>
+        </div>
+
+        <div class="col l6 s6 hide-on-small-only">
+          <a href=""><img class="responsive-img robot" src="./img/Robot.svg" alt=""></a>
+        </div>
+
+      </div>
+    </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Hecho por Dylan Fernandez, Lorena Juhal & Pablo Suárez.</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- / Footer -->
+
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    //<!--
+    function getCookie(e) {
+      var t = null;
+      if (document.cookie && "" != document.cookie)
+        for (var o = document.cookie.split(";"), n = 0; n < o.length; n++) {
+          var r = jQuery.trim(o[n]);
+          if (r.substring(0, e.length + 1) == e + "=") {
+            t = decodeURIComponent(r.substring(e.length + 1));
+            break
+          }
+        }
+      return t
+    }
+
+    function csrfSafeMethod(e) {
+      return /^(GET|HEAD|OPTIONS|TRACE)$/.test(e)
+    }
+    var csrftoken = getCookie("csrftoken");
+    $.ajaxSetup({
+      beforeSend: function (e, t) {
+        csrfSafeMethod(t.type) || this.crossDomain || e.setRequestHeader("X-CSRFToken", csrftoken)
+      }
+    });
+
+    function redirectTo() {
+      window.location.href = "https://www.argentina.gob.ar/buscar/" + encodeURI(encodeURI($("#searchInput")[0].value));
+    }
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+
+      var searchInput = $("#searchInput");
+
+      $('#searchButton').click(function (event) {
+        event.preventDefault();
+        redirectTo();
+      });
+
+      searchInput.keypress(function (e) {
+        if (e.which == 13) {
+          redirectTo();
+        }
+      });
+    });
+    //-->
+  </script>
+
+
+  <script src="/static/js/jquery.mask.min.js"></script>
+  <script src="/static/js/functions.js"></script>
+  <script>
+    /* terms and conditions switch*/
+    var general = $("input[name=general]")
+    var button = $("button[type=submit]")
+
+    general.on('change', function (e) {
+      if (!$(this).is(':checked')) {
+        button.prop('disabled', true);
+      } else {
+        button.prop('disabled', false);
+      }
+    });
+
+    //<--
+    /* view password function*/
+    let mostrar = document.getElementById('mostrar');
+
+    mostrar.addEventListener("click", (e) => {
+      e.preventDefault();
+      let clave = document.getElementById('password');
+
+      if (clave.type === 'password') {
+        clave.setAttribute("type", "text");
+        mostrar.innerHTML =
+          '<input id="opcion" name="mostrar" type="checkbox" checked value="">Ocultar la contraseña';
+        document.getElementById('password').focus();
+
+      } else {
+        clave.setAttribute("type", "password");
+        mostrar.innerHTML = '<input id="opcion" name="mostrar" type="checkbox" value="">Mostrar la contraseña';
+        document.getElementById('mostrar').focus();
+      }
+    });
+
+    $(function () {
+      function mostrarErrores() {
+        $("#errores").html("");
+        $("#errores").html("<h3 tabindex='0'>Se han producido los siguientes errores:</h3><ol></ol>");
+        var cantidadErrores = 0;
+
+        $(".has-error").each(function (i, v) {
+          var mensajeError = $(this).find(".help-block.error").html();
+          $("#errores ol").append("<li>" + mensajeError + "</li>");
+          cantidadErrores++;
+        });
+
+        if (cantidadErrores > 0) {
+          $("#errores").show();
+        } else {
+          $("#errores").hide();
+        }
+      }
+
+      var submitButton = $('button[type="submit"]');
+
+      submitButton.click(function (event) {
+        event.preventDefault();
+        var origin = event.target.name
+
+        if (submitButton.hasClass('state-loading')) {
+          return;
+        }
+        submitButton.addClass('disabled').addClass('state-loading');
+
+        url = "/registro/";
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $('form').serialize()
+          })
+          .done(function (data) {
+            var id_number = $('#id_number').val();
+            var jsonFields = '{"id_type":"CUIL", "id_number":"' + id_number + '"}';
+            var verifyCodeUrl =
+              "/verificar-codigo/?next=/authorize/%3Fclient_id%3D613410%26response_type%3Dcode%26scope%3Dopenid%2Bprofile%2Bemail%2Boptional%26redirect_uri%3Dhttps%3A//mi.argentina.gob.ar/_oauth/oidc%26state%3DeyJsb2dpblN0eWxlIjoicmVkaXJlY3QiLCJjcmVkZW50aWFsVG9rZW4iOiJ6ZWl2alhKRVp0bkZFSFFpaiIsImlzQ29yZG92YSI6ZmFsc2UsInJlZGlyZWN0VXJsIjoiaHR0cHM6Ly9taS5hcmdlbnRpbmEuZ29iLmFyLyJ9";
+
+            if (data.pending) {
+              window.location.href = verifyCodeUrl;
+            } else {
+              window.location.href = data.next;
+            }
+          })
+          .fail(function (data) {
+            if (data.status === 403 || data.status === 500) {
+              $('.alert-warning').remove();
+              $('form').after(
+                '<div class="alert alert-warning alert-dismissible" role="alert">Hubo un error enviando los datos. Intentá recargando la página.</div>'
+              );
+            } else {
+              var response = data.responseJSON;
+              $.each(response.errors, function (key, value) {
+                var input = $('[name="' + key + '"]');
+
+                if (key === 'gender') {
+                  var parent = input.parent().parent().parent();
+                } else if (key == 'id_type' || key == 'country') {
+                  var parent = input.parent();
+                } else {
+                  var parent = input.parent();
+                }
+                if (value) {
+                  //set erors in each field and accessibility panel
+                  parent.addClass('has-error');
+                  if (parent.find('p').length == 0) {
+                    parent.append('<p class="help-block error text-danger">' + value + '</p>');
+                  }
+                } else {
+                  parent.removeClass('has-error');
+                  parent.find('p').remove();
+                }
+              });
+
+              $(".has-error").first().find("input").focus();
+              mostrarErrores();
+            }
+          })
+          .always(function () {
+
+            submitButton.removeClass('disabled').removeClass('state-loading');
+          });
+
+      });
+
+      cleanFormErrors();
+
+      var country_select = $('select[name="country"]');
+      var state_select = $('select[name="state"]');
+      var district_select = $('select[name="district"]');
+      var locality_select = $('select[name="locality"]');
+
+      if ($('select[name="state"]').val() === '') {
+        district_select.attr('disabled', true);
+        locality_select.attr('disabled', true);
+      }
+
+      $('select[name="state"]').on('change', function () {
+        if (this.value === '') {
+          locality_select.attr('disabled', true);
+          district_select.attr('disabled', true);
+          district_select.empty();
+        } else {
+          //locality_select.removeAttr('disabled');
+          district_select.removeAttr('disabled');
+        }
+        load_districts(this.value);
+        load_localidades(this.value, "");
+      });
+
+      district_select.on('change', function () {
+        load_localidades($('select[name="state"]').val(), this.value)
+        if (this.value === '') {
+          locality_select.attr('disabled', true);
+        } else {
+          locality_select.removeAttr('disabled');
+        }
+      });
+
+      locality_select.on('change', function () {
+        if (this.value !== '') {
+          district_select.val($(this).find("option:selected").data("district"));
+        }
+      });
+
+      // Nationality logic -----------------------------------------------
+
+      toogle_nationality_inputs($('select[name="country"]').val())
+
+      $('select[name="country"]').on('change', function () {
+        toogle_nationality_inputs(this.value);
+      });
+
+
+      function clear_nationality_inputs() {
+        $('select[name="state"]').val('');
+        $('select[name="district"]').val('');
+        $('select[name="locality"]').val('');
+      }
+
+      function toogle_nationality_inputs(value) {
+        if (value !== 'ARG') {
+          clear_nationality_inputs();
+          $('.only-arg').fadeOut();
+          if (value !== '') {
+            $('.except-arg').fadeIn();
+          }
+        } else {
+          $('.except-arg').fadeOut();
+          $('.only-arg').fadeIn();
+        }
+      }
+
+      // -----------------------------------------------------------------
+
+      function load_districts(province) {
+        district_select.empty().append('<option value="" selected></option>');
+        // Make the ajax call to the server
+        url = "/api/districts_from_indec/?province=" + province;
+        $.get(url).done(function (data) {
+          var aux, district, _i, _len;
+          data = data['results'];
+          for (_i = 0, _len = data.length; _i < _len; _i++) {
+            district = data[_i];
+            district_select.append('<option value="' + district['value'] + '">' + district['name'] +
+              '</option>');
+          }
+        });
+      }
+
+      function load_localidades(province, district) {
+        // First we clean all options
+        locality_select.empty().append('<option value="" selected></option>');
+        // Make the ajax call to the server
+        url = "/api/localities_from_indec/?province=" + province + "&district=" + district;
+        $.get(url).done(function (data) {
+          var aux, localidad, _i, _len;
+          data = data['results'];
+          for (_i = 0, _len = data.length; _i < _len; _i++) {
+            localidad = data[_i];
+            locality_select.append('<option value="' + localidad['value'] + '" data-district="' + localidad[
+              'district_id'] + '">' + localidad['name'] + '</option>');
+          }
+        });
+      }
+
+      function choose_locality(province, district, locality) {
+        // First we clean all options
+        locality_select.empty().append('<option value="" selected></option>');
+        // Make the ajax call to the server
+        url = "/api/localities_from_indec/?province=" + province + "&district=" + district;
+        $.get(url).done(function (data) {
+          var aux, localidad, _i, _len;
+          data = data['results'];
+          for (_i = 0, _len = data.length; _i < _len; _i++) {
+            localidad = data[_i];
+            locality_select.append('<option value="' + localidad['value'] + '" data-district="' + localidad[
+              'district_id'] + '">' + localidad['name'] + '</option>');
+          }
+          locality_select.val(locality)
+        });
+      }
+
+      var country = "";
+      var state = "";
+      var district = "";
+      var locality = "";
+
+      if (country != "") {
+        country_select.val(country);
+        if (state != "") {
+          state_select.val(state);
+          if (district != "") {
+            district_select.val(district);
+            district_select.removeAttr("disabled")
+            if (locality != "") {
+              choose_locality(state, district, locality);
+              locality_select.removeAttr("disabled")
+            }
+          }
+        }
+        country_select.change()
+      }
+
+    });
+
+    $('input[name="email"]').on('copy paste cut drag drop', function () {
+      return false;
+    });
+    $('input[name="email_confirmation"]').on('copy paste cut drag drop', function () {
+      return false;
+    });
+    //-->
+  </script>
+
+</body>
+
+</html>

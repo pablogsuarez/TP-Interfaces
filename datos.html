@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trámite Online | Mi Argentina</title>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico" type="image/vnd.microsoft.icon">
+ 
+</head>
+
+<body>
+  <nav class="bg-blue" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><img src="./img/miargentina-logo.png"
+          alt="Mi Argentina Logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="link" href="index.html">Inicio</a></li>
+        <li><a class="link" href="./perfil.html">Perfil</a></li>
+        <li><a class="link" href="">Otros tramites</a></li>
+        <li><a class="link active-page" href="#">Tramite Online</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a class="link" href="index.html">Inicio</a></li>
+        <li><a class="link" href="./perfil.html">Perfil</a></li>
+        <li><a class="link" href="">Otros tramites</a></li>
+        <li><a class="link active-page" href="#">Tramite Online</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+  <!-- container  -->
+  <div class="videollamada">
+    <div class="rowForm center">
+      <h1 class="tituloExamen">Exámen de renovación</h1>
+    </div>
+    <div class="container">
+
+      <div  class="rowForm">
+        <a class="barraGuia h3 active-main" href="datos.html">Datos</a>
+      </div>
+      <div class="rowForm ">
+        <p class="header text-lighten-3">Complete los siguientes datos</p>
+      </div>
+      
+      <div class="formPrincipal">
+        
+        <form method="post" >
+          <input type='hidden' name='csrfmiddlewaretoken'
+          value='r1VmIFixEqI06eeSIkBLhEmW0xdi4BhihLsOXmYjYJYfA5vxeypFm9hYqTnfLU3m' />
+          
+        <input type="hidden" name="next"
+        value="/authorize/?client_id=613410&amp;response_type=code&amp;scope=openid+profile+email+optional&amp;redirect_uri=https://mi.argentina.gob.ar/_oauth/oidc&amp;state=eyJsb2dpblN0eWxlIjoicmVkaXJlY3QiLCJjcmVkZW50aWFsVG9rZW4iOiJ6ZWl2alhKRVp0bkZFSFFpaiIsImlzQ29yZG92YSI6ZmFsc2UsInJlZGlyZWN0VXJsIjoiaHR0cHM6Ly9taS5hcmdlbnRpbmEuZ29iLmFyLyJ9">
+        
+        <div id="errores" rol='alert' aria-live='assertive' class="alert alert-danger sr-only">
+        </div>
+        
+        <div class="form-group item-form espaciosInput">
+          <label for="first_name">Número de Licencia de Conducir</label>
+          <input id="first_name" class="form-control texto" type="text" name="first_name" value="">
+        </div>
+        <div class="form-group item-form espaciosInput">
+          <label for="last_name">Número de Trámite</label>
+          <input id="last_name" class="form-control texto" type="text" name="last_name" value="">
+        </div>
+        
+        <div class="form-group item-form espaciosInput">
+          <fieldset>
+            <legend>
+              <label id="gender" for="gender">
+                Posee La licencia vencida
+              </label>
+            </legend>
+            <div class="btn-group btn-group-justified " data-toggle="buttons">
+              <div class="flexTipoSexo">
+                <p>
+                  <label>
+                    <input class="with-gap" name="gender" type="radio" />
+                    <span>SI</span>
+                  </label>
+                </p>    
+                <p>
+                  <label>
+                    <input class="with-gap" name="gender" type="radio" />
+                    <span>NO</span>
+                  </label>
+                </p>
+                <div class="form-group item-form espaciosInput">
+                  <input id="birthdate" class="form-control" type="text" name="birthdate" value="" placeholder="Fecha de vencimiento"
+                  data-mask="09/09/0000" autocomplete="off" maxlength="10">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <div class="form-group item-form espaciosInput">
+          <fieldset>
+            <legend>
+              <label id="gender" for="gender">
+                Posee vehiculo a su nombre
+              </label>
+            </legend>
+            <div class="btn-group btn-group-justified  " data-toggle="buttons">
+              <div class="flexTipoSexo">
+                <p>
+                  <label>
+                    <input class="with-gap" name="gender" type="radio" />
+                    <span>SI</span>
+                  </label>
+                </p>    
+                <p>
+                  <label>
+                    <input class="with-gap" name="gender" type="radio" />
+                    <span>NO</span>
+                  </label>
+                </p>
+                <div class="form-group item-form espaciosInput">
+                  <input id="last_name" class="form-control texto" type="text" name="last_name" value="" placeholder="Numero de matricula"> 
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="rowForm">
+            <div class="col-sm-6 col-xs-12 botones">
+               <a  class="btn btn-success btn-block crearCuenta" href="./videollamada.html">Siguiente Paso > </a> 
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </form>
+    </div>
+    </div>
+  </div>
+  <!--conatiner-->
+  
+  <footer class="page-footer footer-color">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col l3 s12">
+          <h5 class="white-text">Información útil</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Seguridad</a></li>
+            <br>
+            <li><a class="white-text" href="#!">Preguntas Frecuentes </a></li>
+            <br>
+            <li><a class="white-text" href="#!">Terminos y Condiciones</a></li>
+          </ul>
+        </div>
+        
+        <div class="col l3 m6 s12">
+          <h5 class="white-text">Aplicación</h5>
+          <div class="apps">
+            <img class="responsive-img" src="./img/apps.png" alt="">
+          </div>
+        </div>
+        
+        <div class="col l6 s6 hide-on-small-only">
+          <a href=""><img class="responsive-img robot" src="./img/Robot.svg" alt=""></a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      Hecho por Dylan Fernandez, Lorena Juhal & Pablo Suárez.</a>
+    </div>
+  </div>
+</footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  
+</body>
+
+</html>
